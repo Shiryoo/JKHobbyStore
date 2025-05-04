@@ -623,6 +623,21 @@ namespace StoreManager
             this.TbSearch.Enabled = true;
         }
 
+        private void CmbSizeInfo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PnlItemInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void TbInvSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsControl(e.KeyChar))

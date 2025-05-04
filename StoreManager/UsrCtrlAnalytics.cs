@@ -29,8 +29,9 @@ namespace StoreManager
         public UsrCtrlAnalytics(GlobalProcedure gProc)
         {
             InitializeComponent();
-            
+           
             this.gProc = gProc;
+            
             loadDefaults();
             
 
@@ -38,6 +39,8 @@ namespace StoreManager
 
         public void loadDefaults()
         {
+            this.cmbProductSales.Items.Clear();
+            this.cmbProductSold.Items.Clear();
             displayTotalOrders();
             displayTotalSales();
             gProc.ProcAddCmbProductSoldItems(cmbProductSold);
@@ -340,6 +343,26 @@ namespace StoreManager
         {
             FormReport report = new FormReport(gProc);
             report.ShowDialog();
+        }
+
+        private void bunifuLabel14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void product1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbProduct1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProductSales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

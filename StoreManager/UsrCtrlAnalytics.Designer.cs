@@ -145,7 +145,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.BackColor = System.Drawing.Color.SkyBlue;
             this.panel5.Controls.Add(this.btnPrint);
             this.panel5.Controls.Add(this.btnRefresh);
             this.panel5.Controls.Add(this.bunifuPanel1);
@@ -527,6 +527,7 @@
             this.bunifuLabel14.Text = "Top Products";
             this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel14.Click += new System.EventHandler(this.bunifuLabel14_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -696,6 +697,7 @@
             this.pbProduct1.Size = new System.Drawing.Size(68, 66);
             this.pbProduct1.TabIndex = 0;
             this.pbProduct1.TabStop = false;
+            this.pbProduct1.Click += new System.EventHandler(this.pbProduct1_Click);
             // 
             // product1
             // 
@@ -715,6 +717,7 @@
             this.product1.Text = "N/A";
             this.product1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.product1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.product1.Click += new System.EventHandler(this.product1_Click);
             // 
             // panel20
             // 
@@ -975,6 +978,7 @@
             this.bunifuLabel16.AllowParentOverrides = false;
             this.bunifuLabel16.AutoEllipsis = false;
             this.bunifuLabel16.AutoSize = false;
+            this.bunifuLabel16.BackColor = System.Drawing.Color.LightSkyBlue;
             this.bunifuLabel16.CursorType = null;
             this.bunifuLabel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1050,6 +1054,7 @@
             this.bunifuLabel8.AllowParentOverrides = false;
             this.bunifuLabel8.AutoEllipsis = false;
             this.bunifuLabel8.AutoSize = false;
+            this.bunifuLabel8.BackColor = System.Drawing.Color.LightSkyBlue;
             this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1157,6 +1162,7 @@
             this.cmbProductSales.Text = null;
             this.cmbProductSales.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbProductSales.TextLeftMargin = 5;
+            this.cmbProductSales.SelectedIndexChanged += new System.EventHandler(this.cmbProductSales_SelectedIndexChanged);
             this.cmbProductSales.SelectedValueChanged += new System.EventHandler(this.cmbProductSales_SelectedValueChanged_1);
             // 
             // bunifuPanel5
@@ -1209,6 +1215,7 @@
             this.bunifuLabel15.AllowParentOverrides = false;
             this.bunifuLabel15.AutoEllipsis = false;
             this.bunifuLabel15.AutoSize = false;
+            this.bunifuLabel15.BackColor = System.Drawing.Color.LightSkyBlue;
             this.bunifuLabel15.CursorType = null;
             this.bunifuLabel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1266,6 +1273,7 @@
             this.bunifuLabel13.AllowParentOverrides = false;
             this.bunifuLabel13.AutoEllipsis = false;
             this.bunifuLabel13.AutoSize = false;
+            this.bunifuLabel13.BackColor = System.Drawing.Color.LightSkyBlue;
             this.bunifuLabel13.CursorType = null;
             this.bunifuLabel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1359,6 +1367,7 @@
             this.bunifuLabel11.AllowParentOverrides = false;
             this.bunifuLabel11.AutoEllipsis = false;
             this.bunifuLabel11.AutoSize = false;
+            this.bunifuLabel11.BackColor = System.Drawing.Color.LightSkyBlue;
             this.bunifuLabel11.CursorType = null;
             this.bunifuLabel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

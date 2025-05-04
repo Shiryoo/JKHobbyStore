@@ -31,8 +31,8 @@ namespace StoreManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsrCtrlCashiering));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.PanelPOS = new System.Windows.Forms.Panel();
             this.PanelPaginationContainer = new Bunifu.UI.WinForms.BunifuPanel();
             this.PanelPagination = new Bunifu.UI.WinForms.BunifuPanel();
@@ -69,7 +69,7 @@ namespace StoreManager
             this.PanelPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelPOS.BackColor = System.Drawing.Color.Silver;
+            this.PanelPOS.BackColor = System.Drawing.Color.LightSkyBlue;
             this.PanelPOS.Controls.Add(this.PanelPaginationContainer);
             this.PanelPOS.Controls.Add(this.materialCard1);
             this.PanelPOS.Controls.Add(this.label3);
@@ -156,11 +156,11 @@ namespace StoreManager
             this.BtnNextPage.ColorContrastOnClick = 45;
             this.BtnNextPage.ColorContrastOnHover = 45;
             this.BtnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.BtnNextPage.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BtnNextPage.CustomizableEdges = borderEdges1;
             this.BtnNextPage.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnNextPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnNextPage.DisabledFillColor = System.Drawing.Color.Empty;
@@ -249,11 +249,11 @@ namespace StoreManager
             this.BtnPrevPage.ColorContrastOnClick = 45;
             this.BtnPrevPage.ColorContrastOnHover = 45;
             this.BtnPrevPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.BtnPrevPage.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnPrevPage.CustomizableEdges = borderEdges2;
             this.BtnPrevPage.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnPrevPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnPrevPage.DisabledFillColor = System.Drawing.Color.Empty;
@@ -592,7 +592,7 @@ namespace StoreManager
             this.BtnCheckout.BackColor = System.Drawing.Color.Transparent;
             this.BtnCheckout.BorderColor = System.Drawing.Color.White;
             this.BtnCheckout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCheckout.EnteredBorderColor = System.Drawing.Color.Black;
+            this.BtnCheckout.EnteredBorderColor = System.Drawing.Color.BlanchedAlmond;
             this.BtnCheckout.EnteredColor = System.Drawing.Color.Black;
             this.BtnCheckout.Font = new System.Drawing.Font("Arial Rounded MT Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCheckout.Image = null;

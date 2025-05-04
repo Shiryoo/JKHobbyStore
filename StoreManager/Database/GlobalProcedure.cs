@@ -1989,7 +1989,7 @@ namespace StoreManagerDb
 
                 string appDirectory, imagePath;
                 appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                imagePath = Path.Combine(appDirectory, "Resources", "shoes2.png");
+                imagePath = Path.Combine(appDirectory, "Resources", "op9.jpg");
                 icon.Image = Image.FromFile(imagePath);
                 icon.SizeMode = PictureBoxSizeMode.Zoom;
 
@@ -1998,67 +1998,67 @@ namespace StoreManagerDb
                 {
                     case "1":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "shoes2.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "op9.jpg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom; 
                         break;
                     case "2":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "jacket.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "figurines.jpg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "3":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "shirt.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "plushies.jpeg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "4":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "shorts.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "puzzle.jpg"); 
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "5":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "cap.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "blindboxs.jpeg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "6":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "bag.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "keychains.jpg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "7":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "sock.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "Binder.jpg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "8":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "tanktop.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "Containers.jpg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "9":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "accessories.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "Funkopop.jpeg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "10":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "pants.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "toys.jpeg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
                     case "11":
 
-                        imagePath = Path.Combine(appDirectory, "Resources", "others.png");
+                        imagePath = Path.Combine(appDirectory, "Resources", "others.jpg");
                         icon.Image = Image.FromFile(imagePath);
                         icon.SizeMode = PictureBoxSizeMode.Zoom;
                         break;
