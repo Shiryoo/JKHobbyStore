@@ -70,6 +70,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ofdPic = new System.Windows.Forms.OpenFileDialog();
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            this.TbSearch = new CustomComponents.CustomMaterialMaskedTextBox();
             this.PnlButtons = new Bunifu.UI.WinForms.BunifuPanel();
             this.BtnRemoveProduct = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -112,7 +113,6 @@
             this.supplier_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.restock_threshold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PnlContainer = new System.Windows.Forms.Panel();
-            this.TbSearch = new CustomComponents.CustomMaterialMaskedTextBox();
             this.materialCard1.SuspendLayout();
             this.PnlButtons.SuspendLayout();
             this.PnlItemInfo.SuspendLayout();
@@ -140,6 +140,55 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(862, 47);
             this.materialCard1.TabIndex = 44;
+            // 
+            // TbSearch
+            // 
+            this.TbSearch.AllowPromptAsInput = true;
+            this.TbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbSearch.AnimateReadOnly = false;
+            this.TbSearch.AsciiOnly = false;
+            this.TbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TbSearch.BeepOnError = false;
+            this.TbSearch.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.TbSearch.Depth = 0;
+            this.TbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TbSearch.HidePromptOnLeave = false;
+            this.TbSearch.HideSelection = true;
+            this.TbSearch.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.TbSearch.LeadingIcon = global::StoreManager.Properties.Resources.search_icon;
+            this.TbSearch.Location = new System.Drawing.Point(0, -1);
+            this.TbSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.TbSearch.Mask = "";
+            this.TbSearch.MaxLength = 32767;
+            this.TbSearch.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.TbSearch.Name = "TbSearch";
+            this.TbSearch.PasswordChar = '\0';
+            this.TbSearch.PrefixSuffixText = null;
+            this.TbSearch.PromptChar = '_';
+            this.TbSearch.ReadOnly = false;
+            this.TbSearch.RejectInputOnFirstFailure = false;
+            this.TbSearch.ResetOnPrompt = true;
+            this.TbSearch.ResetOnSpace = true;
+            this.TbSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TbSearch.SelectedText = "";
+            this.TbSearch.SelectionLength = 0;
+            this.TbSearch.SelectionStart = 0;
+            this.TbSearch.ShortcutsEnabled = true;
+            this.TbSearch.Size = new System.Drawing.Size(862, 48);
+            this.TbSearch.SkipLiterals = true;
+            this.TbSearch.TabIndex = 16;
+            this.TbSearch.TabStop = false;
+            this.TbSearch.Text = "Search";
+            this.TbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.TbSearch.TrailingIcon = null;
+            this.TbSearch.UnderlineColor = System.Drawing.Color.Black;
+            this.TbSearch.UseSystemPasswordChar = false;
+            this.TbSearch.ValidatingType = null;
+            this.TbSearch.Enter += new System.EventHandler(this.TbSearch_Enter);
+            this.TbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbInvSearch_KeyPress);
+            this.TbSearch.Leave += new System.EventHandler(this.TbSearch_Leave);
+            this.TbSearch.TextChanged += new System.EventHandler(this.TbSearch_TextChanged);
             // 
             // PnlButtons
             // 
@@ -769,7 +818,7 @@
             this.CmbViewType.FillIndicator = false;
             this.CmbViewType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CmbViewType.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CmbViewType.ForeColor = System.Drawing.Color.White;
+            this.CmbViewType.ForeColor = System.Drawing.Color.Black;
             this.CmbViewType.FormattingEnabled = true;
             this.CmbViewType.Icon = null;
             this.CmbViewType.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
@@ -949,7 +998,7 @@
             this.TxtRestockThreshold.SelectionLength = 0;
             this.TxtRestockThreshold.SelectionStart = 0;
             this.TxtRestockThreshold.ShortcutsEnabled = true;
-            this.TxtRestockThreshold.Size = new System.Drawing.Size(154, 37);
+            this.TxtRestockThreshold.Size = new System.Drawing.Size(154, 30);
             this.TxtRestockThreshold.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtRestockThreshold.TabIndex = 12;
             this.TxtRestockThreshold.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1133,7 +1182,7 @@
             this.TxtRemainingStocks.SelectionLength = 0;
             this.TxtRemainingStocks.SelectionStart = 0;
             this.TxtRemainingStocks.ShortcutsEnabled = true;
-            this.TxtRemainingStocks.Size = new System.Drawing.Size(154, 37);
+            this.TxtRemainingStocks.Size = new System.Drawing.Size(154, 30);
             this.TxtRemainingStocks.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtRemainingStocks.TabIndex = 13;
             this.TxtRemainingStocks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1266,7 +1315,7 @@
             this.TxtPrice.SelectionLength = 0;
             this.TxtPrice.SelectionStart = 0;
             this.TxtPrice.ShortcutsEnabled = true;
-            this.TxtPrice.Size = new System.Drawing.Size(154, 37);
+            this.TxtPrice.Size = new System.Drawing.Size(154, 30);
             this.TxtPrice.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtPrice.TabIndex = 10;
             this.TxtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1370,7 +1419,7 @@
             this.TxtCostPerItem.SelectionLength = 0;
             this.TxtCostPerItem.SelectionStart = 0;
             this.TxtCostPerItem.ShortcutsEnabled = true;
-            this.TxtCostPerItem.Size = new System.Drawing.Size(154, 37);
+            this.TxtCostPerItem.Size = new System.Drawing.Size(154, 30);
             this.TxtCostPerItem.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtCostPerItem.TabIndex = 11;
             this.TxtCostPerItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1461,7 +1510,7 @@
             this.TxtSupplier.SelectionLength = 0;
             this.TxtSupplier.SelectionStart = 0;
             this.TxtSupplier.ShortcutsEnabled = true;
-            this.TxtSupplier.Size = new System.Drawing.Size(154, 37);
+            this.TxtSupplier.Size = new System.Drawing.Size(154, 30);
             this.TxtSupplier.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtSupplier.TabIndex = 9;
             this.TxtSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1792,7 +1841,7 @@
             this.TxtName.SelectionLength = 0;
             this.TxtName.SelectionStart = 0;
             this.TxtName.ShortcutsEnabled = true;
-            this.TxtName.Size = new System.Drawing.Size(154, 37);
+            this.TxtName.Size = new System.Drawing.Size(154, 30);
             this.TxtName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtName.TabIndex = 7;
             this.TxtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1957,55 +2006,6 @@
             this.PnlContainer.Name = "PnlContainer";
             this.PnlContainer.Size = new System.Drawing.Size(1067, 645);
             this.PnlContainer.TabIndex = 2;
-            // 
-            // TbSearch
-            // 
-            this.TbSearch.AllowPromptAsInput = true;
-            this.TbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbSearch.AnimateReadOnly = false;
-            this.TbSearch.AsciiOnly = false;
-            this.TbSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.TbSearch.BeepOnError = false;
-            this.TbSearch.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.TbSearch.Depth = 0;
-            this.TbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TbSearch.HidePromptOnLeave = false;
-            this.TbSearch.HideSelection = true;
-            this.TbSearch.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.TbSearch.LeadingIcon = global::StoreManager.Properties.Resources.search_icon;
-            this.TbSearch.Location = new System.Drawing.Point(0, -1);
-            this.TbSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.TbSearch.Mask = "";
-            this.TbSearch.MaxLength = 32767;
-            this.TbSearch.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.TbSearch.Name = "TbSearch";
-            this.TbSearch.PasswordChar = '\0';
-            this.TbSearch.PrefixSuffixText = null;
-            this.TbSearch.PromptChar = '_';
-            this.TbSearch.ReadOnly = false;
-            this.TbSearch.RejectInputOnFirstFailure = false;
-            this.TbSearch.ResetOnPrompt = true;
-            this.TbSearch.ResetOnSpace = true;
-            this.TbSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TbSearch.SelectedText = "";
-            this.TbSearch.SelectionLength = 0;
-            this.TbSearch.SelectionStart = 0;
-            this.TbSearch.ShortcutsEnabled = true;
-            this.TbSearch.Size = new System.Drawing.Size(862, 48);
-            this.TbSearch.SkipLiterals = true;
-            this.TbSearch.TabIndex = 16;
-            this.TbSearch.TabStop = false;
-            this.TbSearch.Text = "Search";
-            this.TbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.TbSearch.TrailingIcon = null;
-            this.TbSearch.UnderlineColor = System.Drawing.Color.Black;
-            this.TbSearch.UseSystemPasswordChar = false;
-            this.TbSearch.ValidatingType = null;
-            this.TbSearch.Enter += new System.EventHandler(this.TbSearch_Enter);
-            this.TbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbInvSearch_KeyPress);
-            this.TbSearch.Leave += new System.EventHandler(this.TbSearch_Leave);
-            this.TbSearch.TextChanged += new System.EventHandler(this.TbSearch_TextChanged);
             // 
             // UsrCtrlInventory
             // 

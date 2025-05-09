@@ -44,6 +44,11 @@ namespace StoreManager
             this.PnlOrdersPanel.TaxRate = gProc.FncGetLatestTaxRate();
             this.LblTax.Text = "VAT (" + (int)(this.PnlOrdersPanel.TaxRate * 100) + "%)";
             this.CmbType.Items.AddRange(gProc.FncGetProductTypes());
+            this.CmbSizes.Items.AddRange(gProc.FncGetDistinctSizes());
+            this.CmbOrder.SelectedIndex = 0;
+            this.CmbType.SelectedIndex = 0;
+            this.CmbSizes.SelectedIndex = 0;
+          
         }
 
         public void InitializeCardView()
@@ -56,8 +61,8 @@ namespace StoreManager
             this.productsAndOrdersLinker = new ProductsAndOrdersLinker(this.PnlOrdersPanel, this.PnlProductsPanel);
 
             this.PnlOrdersPanel.InitializeCheckoutLabels(this.LblTotalOutput, this.LblTaxOutput, this.LblSubtotalOutput);
-            this.CmbSizes.Items.AddRange(gProc.FncGetDistinctSizes());
-            this.CmbOrder.SelectedIndex = 0;
+            
+           
             UpdatePaginationText();
         }
 
@@ -207,14 +212,23 @@ namespace StoreManager
 
         private void CmbOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.order = CmbOrder.Text;
-            SearchAndFilter(itemName, itemSize, itemType, order);
+            
+           
+                this.order = CmbOrder.Text;
+                SearchAndFilter(itemName, itemSize, itemType, order);
+            
+            
         }
 
         private void CmbSizes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.itemSize = CmbSizes.Text;
-            SearchAndFilter(itemName, itemSize, itemType, order);
+            
+          
+            {
+                this.itemSize = CmbSizes.Text;
+                SearchAndFilter(itemName, itemSize, itemType, order);
+            }
+                
         }
 
         private void ClearFilters()
@@ -226,8 +240,13 @@ namespace StoreManager
 
         private void CmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.itemType = CmbType.Text;
-            SearchAndFilter(itemName, itemSize, itemType, order);
+            
+           
+            
+                this.itemType = CmbType.Text;
+                SearchAndFilter(itemName, itemSize, itemType, order);
+            
+                
         }
 
         public OrdersPanel PanelOrdersPanel

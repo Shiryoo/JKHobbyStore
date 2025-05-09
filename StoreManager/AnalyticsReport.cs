@@ -18,8 +18,7 @@ namespace StoreManager {
     
     public class AnalyticsReport : ReportClass {
         
-        public AnalyticsReport() {
-        }
+       
         
         public override string ResourceName {
             get {

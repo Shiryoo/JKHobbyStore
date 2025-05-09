@@ -78,6 +78,7 @@ namespace StoreManager
                 this.BtnAnalytics.Enabled = false;
                 this.BtnStaff.Enabled = false;
                 ShowUserCtrl(buyView);
+                
             }
             else if (loggedStaffRole == "Inventory Manager")
             {
@@ -155,6 +156,11 @@ namespace StoreManager
         private void BtnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            buyView.InitializeCardView();
         }
     }
 }

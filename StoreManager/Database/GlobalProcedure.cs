@@ -1727,6 +1727,7 @@ namespace StoreManagerDb
             }
         }
 
+
         public void ProcGetProductSoldCount(string itemName, BunifuLabel lbl)
         {
             try
