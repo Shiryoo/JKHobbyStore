@@ -37,6 +37,7 @@ namespace StoreManager
         private bool openInFullScreen = bool.Parse(ConfigurationManager.AppSettings["open_in_fullscreen"].ToString());
         private string loggedStaffRole = "Admin";
 
+        private int view = 0;
         public FormMainWindow()
         {
 
@@ -69,6 +70,7 @@ namespace StoreManager
             staffView.Size = this.PnlContent.Size;
             buyView.InitializeCardView();
             buyView.CenterPagination();
+            ControlBox = false;
 
             this.BtnSettings.Visible = false;
 
@@ -115,6 +117,7 @@ namespace StoreManager
 
         private void BtnPos_Click(object sender, EventArgs e)
         {
+            view = 1;
             //Panel contentPanel = this.Controls.Find("PnlContent", true)[0] as Panel;
             //this.PnlContent.Controls.Add(buyView);
             if (inventoryView.Updated)
@@ -133,16 +136,19 @@ namespace StoreManager
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
+            view = 2;
             ShowUserCtrl(inventoryView);
         }
 
         private void BtnAnalytics_Click(object sender, EventArgs e)
         {
+            view = 3;
             ShowUserCtrl(analyticsView);
         }
 
         private void BtnStaff_Click(object sender, EventArgs e)
         {
+            view = 4;
             ShowUserCtrl(staffView);
         }
 
@@ -160,7 +166,12 @@ namespace StoreManager
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            buyView.InitializeCardView();
+            
+                    buyView.InitializeCardView();
+            this.Refresh();
+            this.Update();
+            
+            
         }
     }
 }

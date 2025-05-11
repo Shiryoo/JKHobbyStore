@@ -68,7 +68,13 @@ namespace StoreManager
 
         public void BtnPdpClicked(object sender, EventArgs e)
         {
+
             ProductDisplayPanel pdpPressed = productsAndOrdersLinker.GetProdDisplayPanel(sender.GetHashCode());
+
+            if (!productsAndOrdersLinker.ProductsPanelId.ContainsKey(pdpPressed.Item.Id))
+            {
+                productsAndOrdersLinker.ProductsPanelId.Add(pdpPressed.Item.Id, pdpPressed);
+            }
             this.PnlProductsPanel.AddCartContentId(pdpPressed.Item.Id);
             this.PnlOrdersPanel.AddOrder(pdpPressed.Item.ToCartItem());
             this.PnlOrdersPanel.UpdateCheckoutLabels();
@@ -114,6 +120,8 @@ namespace StoreManager
             this.PnlProductsPanel.InitializeItems(gProc.FncGetFilteredProducts(name, size, type, order), this.BtnPdpClicked);
             this.PnlProductsPanel.InitializeCards();
             this.PnlProductsPanel.ArrangeProductPanels(currentPage);
+
+            this.productsAndOrdersLinker = new ProductsAndOrdersLinker(this.PnlOrdersPanel, this.PnlProductsPanel);
         }
 
         private void TbPosSearch_Enter(object sender, EventArgs e)
@@ -168,19 +176,38 @@ namespace StoreManager
 
         private void OnOrderDeleted(object sender, EventArgs e)
         {
-
             int deletedItemId = this.PnlOrdersPanel.DeletedOrder.CartItem.Id;
-            ClearFilters();
-            ProductDisplayPanel pdpPanel = this.productsAndOrdersLinker.ProductsPanelId[deletedItemId];
             this.PnlProductsPanel.RemoveCartContentId(deletedItemId);
 
+            // Store current page before clearing filters
+            int currentPageBeforeClear = this.currentPage;
 
+            // Save and clear deleted order reference
             this.PnlOrdersPanel.DeletedOrder = null;
 
-            pdpPanel.EnableButton();
+            // Clear filters (this resets the display and goes to page 1)
+            ClearFilters();
+
+            // Restore to the previous page if it wasn't page 1
+            if (currentPageBeforeClear > 1)
+            {
+                // Go back to the page we were on
+                this.currentPage = currentPageBeforeClear;
+                this.PnlProductsPanel.ArrangeProductPanels(this.currentPage);
+                UpdatePaginationText();
+            }
+
+            // Re-enable the appropriate button on the current page
+            foreach (ProductDisplayPanel panel in this.PnlProductsPanel.PdpDisplays)
+            {
+                if (panel.Item != null && panel.Item.Id == deletedItemId && panel.Visible)
+                {
+                    panel.EnableButton();
+                    break;
+                }
+            }
+            
         }
-
-
 
         public void PrintItemList(List<Item> items)
         {
@@ -206,47 +233,43 @@ namespace StoreManager
 
         private void TbPosSearch_TextChanged(object sender, EventArgs e)
         {
-            if (TbPosSearch.Text != "Search") this.itemName = TbPosSearch.Text;
+            if (!string.Equals(TbPosSearch.Text, "Search", StringComparison.OrdinalIgnoreCase))
+                this.itemName = TbPosSearch.Text;
             SearchAndFilter(itemName, itemSize, itemType, order);
         }
-
         private void CmbOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-           
-                this.order = CmbOrder.Text;
-                SearchAndFilter(itemName, itemSize, itemType, order);
-            
-            
+
+              this.order = CmbOrder.Text;
+              SearchAndFilter(itemName, itemSize, itemType, order);
+
         }
 
         private void CmbSizes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-          
-            {
-                this.itemSize = CmbSizes.Text;
-                SearchAndFilter(itemName, itemSize, itemType, order);
-            }
-                
+
+            this.itemSize = CmbSizes.Text;
+            SearchAndFilter(itemName, itemSize, itemType, order);
+         
         }
 
         private void ClearFilters()
         {
             this.TbPosSearch.Text = "";
             this.CmbSizes.SelectedIndex = 0;
+            this.CmbType.SelectedIndex = 0;  // Add this line
             this.CmbOrder.SelectedIndex = 0;
-        }
 
+            // Also reset the filter variables
+            this.itemName = string.Empty;
+            this.itemSize = string.Empty;
+            this.itemType = string.Empty;
+            this.order = "Alphabetical";
+        }
         private void CmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-           
-            
-                this.itemType = CmbType.Text;
-                SearchAndFilter(itemName, itemSize, itemType, order);
-            
-                
+             this.itemType = CmbType.Text;
+             SearchAndFilter(itemName, itemSize, itemType, order);
         }
 
         public OrdersPanel PanelOrdersPanel
@@ -260,6 +283,11 @@ namespace StoreManager
             this.PnlOrdersPanel.TaxRate = latestTaxRate;
             this.LblTax.Text = "VAT (" + (int)(latestTaxRate * 100) + "%)";
             PnlOrdersPanel.ClearOrders();
+        }
+
+        private void TbPosSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

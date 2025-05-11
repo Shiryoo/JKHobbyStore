@@ -31,8 +31,8 @@ namespace StoreManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsrCtrlCashiering));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.PanelPOS = new System.Windows.Forms.Panel();
             this.PanelPaginationContainer = new Bunifu.UI.WinForms.BunifuPanel();
             this.PanelPagination = new Bunifu.UI.WinForms.BunifuPanel();
@@ -156,11 +156,11 @@ namespace StoreManager
             this.BtnNextPage.ColorContrastOnClick = 45;
             this.BtnNextPage.ColorContrastOnHover = 45;
             this.BtnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.BtnNextPage.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.BtnNextPage.CustomizableEdges = borderEdges5;
             this.BtnNextPage.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnNextPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnNextPage.DisabledFillColor = System.Drawing.Color.Empty;
@@ -249,11 +249,11 @@ namespace StoreManager
             this.BtnPrevPage.ColorContrastOnClick = 45;
             this.BtnPrevPage.ColorContrastOnHover = 45;
             this.BtnPrevPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.BtnPrevPage.CustomizableEdges = borderEdges2;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.BtnPrevPage.CustomizableEdges = borderEdges6;
             this.BtnPrevPage.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnPrevPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnPrevPage.DisabledFillColor = System.Drawing.Color.Empty;
@@ -409,6 +409,8 @@ namespace StoreManager
             this.CmbType.ItemHeight = 26;
             this.CmbType.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.CmbType.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.CmbType.Items.AddRange(new object[] {
+            "All"});
             this.CmbType.ItemTopMargin = 3;
             this.CmbType.Location = new System.Drawing.Point(799, 31);
             this.CmbType.Name = "CmbType";
@@ -472,6 +474,7 @@ namespace StoreManager
             // 
             // CmbSizes
             // 
+            this.CmbSizes.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.CmbSizes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CmbSizes.BackColor = System.Drawing.Color.Transparent;
             this.CmbSizes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
@@ -673,6 +676,7 @@ namespace StoreManager
             this.TbPosSearch.UnderlineColor = System.Drawing.Color.Black;
             this.TbPosSearch.UseSystemPasswordChar = false;
             this.TbPosSearch.ValidatingType = null;
+            this.TbPosSearch.Click += new System.EventHandler(this.TbPosSearch_Click);
             this.TbPosSearch.Enter += new System.EventHandler(this.TbPosSearch_Enter);
             this.TbPosSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbPosSearch_KeyPress);
             this.TbPosSearch.Leave += new System.EventHandler(this.TbPosSearch_Leave);

@@ -17,10 +17,8 @@ namespace StoreManager.CustomComponentsLinker
         private ProductsPanel productsPanel;
         private Dictionary<int, ProductDisplayPanel> productsPanelButtons;
         private Dictionary<int,  ProductDisplayPanel> productsPanelId;
-
         public ProductsAndOrdersLinker(OrdersPanel ordersPanel, ProductsPanel productsPanel)
         {
-
             this.ordersPanel = ordersPanel;
             this.productsPanel = productsPanel;
             this.productsPanelButtons = new Dictionary<int, ProductDisplayPanel>();
@@ -28,11 +26,24 @@ namespace StoreManager.CustomComponentsLinker
 
             foreach (ProductDisplayPanel pdpDisplay in this.productsPanel.PdpDisplays)
             {
-                this.productsPanelButtons.Add(pdpDisplay.BtnAddToCart.GetHashCode(), pdpDisplay);
+                // Just copy this shit kay naa koy giusab
+                int buttonHash = pdpDisplay.BtnAddToCart.GetHashCode();
+                if (!this.productsPanelButtons.ContainsKey(buttonHash))
+                {
+                    this.productsPanelButtons.Add(pdpDisplay.BtnAddToCart.GetHashCode(), pdpDisplay);
+                }
 
-                if (pdpDisplay.Item != null) this.productsPanelId.Add(pdpDisplay.Item.Id, pdpDisplay);
+                if (pdpDisplay.Item != null)
+                {
+                    int itemId = pdpDisplay.Item.Id;
+                    if (!this.productsPanelId.ContainsKey(itemId))
+                    {
+                        this.productsPanelId.Add(pdpDisplay.Item.Id, pdpDisplay);
+                    }
+                }
             }
         }
+
 
         public ProductDisplayPanel GetProdDisplayPanel(int hashCode)
         {
